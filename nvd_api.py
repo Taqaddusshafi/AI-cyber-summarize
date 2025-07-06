@@ -1,9 +1,10 @@
 import os
 import requests
 from dotenv import load_dotenv
+import streamlit as st
 
 load_dotenv()
-API_KEY = os.getenv("NVD_API_KEY")
+API_KEY = st.secrets["NVD_API_KEY"]
 
 def fetch_from_nvd(cve_id, use_key=True):
     url = "https://services.nvd.nist.gov/rest/json/cves/2.0"
